@@ -4,7 +4,7 @@ import com.app.bonialcodechallenge.constants.ApiConstants.getBaseUrl
 import com.app.bonialcodechallenge.data.remote.ApiService
 import com.app.bonialcodechallenge.domain.repository.ContentRepository
 import com.app.bonialcodechallenge.domain.repository.ContentRepositoryImpl
-import com.app.bonialcodechallenge.domain.usecases.GetBrochuresUseCase
+import com.app.bonialcodechallenge.domain.usecases.GetContentUseCase
 import com.app.bonialcodechallenge.presentation.viewmodel.ContentViewModel
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -60,7 +60,7 @@ val repositoryModule = module {
 
 // ✅ Use Case Module
 val useCaseModule = module {
-    factory { GetBrochuresUseCase(get()) } // Inject Repository
+    factory { GetContentUseCase(get()) } // Inject Repository
 }
 
 // ✅ ViewModel Module

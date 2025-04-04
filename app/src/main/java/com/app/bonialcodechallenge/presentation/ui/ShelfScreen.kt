@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -42,6 +41,7 @@ import com.app.bonialcodechallenge.data.remote.dto.Brochure
 import com.app.bonialcodechallenge.presentation.viewmodel.ContentViewModel
 import com.app.bonialcodechallenge.presentation.viewmodel.UiState
 import org.koin.androidx.compose.koinViewModel
+
 @Composable
 fun ContentScreen(viewModel: ContentViewModel = koinViewModel()) {
     val uiState by viewModel.uiState.collectAsState()

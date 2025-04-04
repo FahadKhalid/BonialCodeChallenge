@@ -1,9 +1,7 @@
 package com.app.bonialcodechallenge.constants
 
-internal object ApiConstants {
-    // Private to restrict access within the module
-    private const val BASE_URL = "https://mobile-s3-test-assets.aws-sdlc-bonial.com/"
+import com.app.bonialcodechallenge.BuildConfig
 
-    // Public getter to prevent direct field access
-    fun getBaseUrl(): String = BASE_URL
+internal object ApiConstants {
+    fun getBaseUrl(): String = BuildConfig.BASE_URL
 }

@@ -10,6 +10,10 @@ android {
     namespace = "com.app.bonialcodechallenge"
     compileSdk = 35
 
+    buildFeatures {
+        buildConfig = true // ✅ Enable BuildConfig fields
+    }
+
     defaultConfig {
         applicationId = "com.app.bonialcodechallenge"
         minSdk = 24
@@ -21,7 +25,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://mobile-s3-test-assets.aws-sdlc-bonial.com/\"")
+        }
         release {
+            buildConfigField("String", "BASE_URL", "\"https://mobile-s3-test-assets.aws-sdlc-bonial.com/\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),

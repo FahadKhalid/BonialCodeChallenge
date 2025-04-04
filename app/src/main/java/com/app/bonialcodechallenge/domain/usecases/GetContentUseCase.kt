@@ -3,7 +3,7 @@ package com.app.bonialcodechallenge.domain.usecases
 import com.app.bonialcodechallenge.data.remote.dto.Brochure
 import com.app.bonialcodechallenge.domain.repository.ContentRepository
 
-class GetBrochuresUseCase(private val repository: ContentRepository) {
+class GetContentUseCase(private val repository: ContentRepository) {
     suspend operator fun invoke(): Result<List<Brochure>> {
         return repository.getFilteredContents().map { data ->
             data.map { item ->
