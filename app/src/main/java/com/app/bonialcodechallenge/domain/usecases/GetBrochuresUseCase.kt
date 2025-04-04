@@ -11,11 +11,18 @@ class GetBrochuresUseCase(private val repository: ContentRepository) {
 
                 // Extract publisher map
                 val publisherMap = content?.get("publisher") as? Map<*, *>
+                val brochureImage = content?.get("brochureImage") as? String ?: ""
+                val id = content?.get("id") as? Double ?: 0.0
                 val publisherName = publisherMap?.get("name") as? String ?: "Unknown Publisher"
+                val distance = content?.get("distance") as? Double ?: 0.0
+                val contentType = item.contentType
 
                 Brochure(
-                    imageUrl = content?.get("brochureImage") as? String ?: "",
-                    name = publisherName
+                    imageUrl = brochureImage,
+                    name = publisherName,
+                    distance = distance,
+                    id = id,
+                    contentType = contentType
                 )
             }
         }

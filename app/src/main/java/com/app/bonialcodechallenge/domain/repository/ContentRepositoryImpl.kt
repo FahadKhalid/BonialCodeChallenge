@@ -19,8 +19,6 @@ class ContentRepositoryImpl(
                             item.content != null
                 } ?: emptyList()
                 Result.success(filtered)
-
-
             } catch (e: Exception) {
                 Result.failure(e)
             }

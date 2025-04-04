@@ -27,7 +27,10 @@ data class ContentItem(
 @JsonClass(generateAdapter = true)
 data class BrochureResponse(
     @Json(name = "brochureImage") val imageUrl: String,
+    @Json(name = "id") val id: String,
     @Json(name = "publisher") val publisher: Publisher,
+    @Json(name = "distance") val distance: Double,
+    @Json(name = "contentType") val contentType: String,
 )
 
 @JsonClass(generateAdapter = true)
@@ -37,5 +40,8 @@ data class Publisher(
 
 data class Brochure(
     val imageUrl: String,
-    val name: String
+    val id: Double,
+    val distance: Double,
+    val name: String,
+    val contentType: String?
 )
