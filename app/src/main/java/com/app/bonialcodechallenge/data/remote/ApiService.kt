@@ -5,5 +5,5 @@ import retrofit2.http.GET
 
 interface ApiService {
     @GET("shelf.json")
-    suspend fun getShelf(): ApiResponse
+    suspend fun getBrochures(): ApiResponse
 }

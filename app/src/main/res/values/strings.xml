@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">BonialCodeChallenge</string>
+    <string name="filter_distance">Show only within 5 km</string>
+    <string name="filter_premium">Show Premium Brochures</string>
+    <string name="unknown_error">Please retry!</string>
+    <string name="retry">Retry</string>
 </resources>

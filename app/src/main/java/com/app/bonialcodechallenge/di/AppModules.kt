@@ -2,10 +2,10 @@ package com.app.bonialcodechallenge.di
 
 import com.app.bonialcodechallenge.constants.ApiConstants.getBaseUrl
 import com.app.bonialcodechallenge.data.remote.ApiService
-import com.app.bonialcodechallenge.domain.repository.ContentRepository
-import com.app.bonialcodechallenge.domain.repository.ContentRepositoryImpl
-import com.app.bonialcodechallenge.domain.usecases.GetContentUseCase
-import com.app.bonialcodechallenge.presentation.viewmodel.ContentViewModel
+import com.app.bonialcodechallenge.domain.repository.BrochureRepository
+import com.app.bonialcodechallenge.domain.repository.BrochureRepositoryImpl
+import com.app.bonialcodechallenge.domain.usecases.GetBrochuresUseCase
+import com.app.bonialcodechallenge.presentation.viewmodel.BrochureViewModel
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -55,15 +55,15 @@ val networkModule = module {
 
 // ✅ Repository Module
 val repositoryModule = module {
-    single<ContentRepository> { ContentRepositoryImpl(get()) } // Inject ApiService
+    single<BrochureRepository> { BrochureRepositoryImpl(get()) } // Inject ApiService
 }
 
 // ✅ Use Case Module
 val useCaseModule = module {
-    factory { GetContentUseCase(get()) } // Inject Repository
+    factory { GetBrochuresUseCase(get()) } // Inject Repository
 }
 
 // ✅ ViewModel Module
 val viewModelModule = module {
-    viewModel { ContentViewModel(get()) } // Inject UseCase
+    viewModel { BrochureViewModel(get()) } // Inject UseCase
 }

@@ -6,10 +6,10 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class ContentRepositoryImpl(
+class BrochureRepositoryImpl(
     private val apiService: ApiService,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
-) : ContentRepository {
+) : BrochureRepository {
     private val cache = mutableListOf<ContentItem>()
 
     override suspend fun getFilteredContents(): Result<List<ContentItem>> {
@@ -19,7 +19,7 @@ class ContentRepositoryImpl(
                     return@withContext Result.success(cache)
                 }
 
-                val response = apiService.getShelf()
+                val response = apiService.getBrochures()
                 val filtered = response.embedded?.contents?.filter {
                     it.contentType != "superBannerCarousel" && it.content != null
                 } ?: emptyList()

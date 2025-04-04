@@ -37,11 +37,3 @@ data class BrochureResponse(
 data class Publisher(
     @Json(name = "name") val name: String,
 )
-
-data class Brochure(
-    val imageUrl: String,
-    val id: Double,
-    val distance: Double,
-    val name: String,
-    val contentType: String?
-)
