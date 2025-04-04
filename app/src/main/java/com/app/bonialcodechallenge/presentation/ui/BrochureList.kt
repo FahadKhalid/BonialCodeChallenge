@@ -1,6 +1,7 @@
 package com.app.bonialcodechallenge.presentation.ui
 
 import android.content.res.Configuration
+import android.widget.Toast
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -9,9 +10,10 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import com.app.bonialcodechallenge.domain.util.Brochure
-import com.app.bonialcodechallenge.domain.util.BrochureType
+import com.app.bonialcodechallenge.data.remote.dto.Brochure
+import com.app.bonialcodechallenge.data.remote.dto.BrochureType
 
 @Composable
 fun BrochureList(data: List<Brochure>) {
@@ -35,4 +37,5 @@ fun BrochureList(data: List<Brochure>) {
             }
         }
     }
+    Toast.makeText(LocalContext.current, "${data.size} items showing", Toast.LENGTH_SHORT).show()
 }

@@ -3,8 +3,8 @@ package com.app.bonialcodechallenge.presentation.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.app.bonialcodechallenge.domain.usecases.GetBrochuresUseCase
-import com.app.bonialcodechallenge.domain.util.Brochure
-import com.app.bonialcodechallenge.domain.util.BrochureType
+import com.app.bonialcodechallenge.data.remote.dto.Brochure
+import com.app.bonialcodechallenge.data.remote.dto.BrochureType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

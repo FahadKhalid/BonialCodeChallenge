@@ -1,5 +1,6 @@
 package com.app.bonialcodechallenge.domain.repository
 
+import com.app.bonialcodechallenge.constants.superBannerCarousel
 import com.app.bonialcodechallenge.data.remote.ApiService
 import com.app.bonialcodechallenge.data.remote.dto.ContentItem
 import kotlinx.coroutines.CoroutineDispatcher
@@ -21,7 +22,7 @@ class BrochureRepositoryImpl(
 
                 val response = apiService.getBrochures()
                 val filtered = response.embedded?.contents?.filter {
-                    it.contentType != "superBannerCarousel" && it.content != null
+                    it.contentType != superBannerCarousel && it.content != null
                 } ?: emptyList()
 
                 cache.clear()

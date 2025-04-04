@@ -5,3 +5,5 @@ import com.app.bonialcodechallenge.BuildConfig
 internal object ApiConstants {
     fun getBaseUrl(): String = BuildConfig.BASE_URL
 }
+
+const val superBannerCarousel = "superBannerCarousel"

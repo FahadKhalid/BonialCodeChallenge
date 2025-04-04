@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.app.bonialcodechallenge.R
-import com.app.bonialcodechallenge.domain.util.Brochure
+import com.app.bonialcodechallenge.data.remote.dto.Brochure
 
 @Composable
 fun ContentItemView(item: Brochure, isFullWidth: Boolean) {
