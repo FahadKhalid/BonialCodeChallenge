@@ -1,0 +1,5 @@
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">mobile-s3-test-assets.aws-sdlc-bonial.com</domain>
+    </domain-config>
+</network-security-config>
