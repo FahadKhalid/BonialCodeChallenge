@@ -11,7 +11,7 @@ class BrochureRepositoryImpl(
     private val apiService: ApiService,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : BrochureRepository {
-    private val cache = mutableListOf<ContentItem>()
+    val cache = mutableListOf<ContentItem>()
 
     override suspend fun getFilteredContents(): Result<List<ContentItem>> {
         return withContext(ioDispatcher) {
