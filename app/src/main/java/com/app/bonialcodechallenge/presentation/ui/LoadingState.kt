@@ -29,7 +29,6 @@ fun LoadingState(modifier: Modifier = Modifier) {
 
 @Composable
 fun ErrorState(
-    message: String?,
     modifier: Modifier = Modifier,
     onRetry: () -> Unit
 ) {
@@ -39,7 +38,7 @@ fun ErrorState(
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = message ?: stringResource(R.string.unknown_error),
+            text = stringResource(R.string.unknown_error),
             color = MaterialTheme.colorScheme.error
         )
         Spacer(modifier = Modifier.height(16.dp))

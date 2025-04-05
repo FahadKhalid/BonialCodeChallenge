@@ -11,7 +11,7 @@ android {
     compileSdk = 35
 
     buildFeatures {
-        buildConfig = true // ✅ Enable BuildConfig fields
+        buildConfig = true
     }
 
     defaultConfig {
@@ -70,7 +70,7 @@ dependencies {
     implementation(libs.moshi.kotlin)
     implementation(libs.androidx.media3.common.ktx)
     implementation(libs.androidx.storage)
-    ksp(libs.moshi.kotlin.codegen) // KSP instead of kapt
+    ksp(libs.moshi.kotlin.codegen)
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.android)
@@ -78,7 +78,7 @@ dependencies {
     // Koin Core
     implementation(libs.koin.android)
     implementation(libs.koin.annotations)
-    ksp(libs.koin.ksp.compiler) // For KSP processing
+    ksp(libs.koin.ksp.compiler)
     // Koin for Jetpack Compose
     implementation(libs.koin.androidx.compose)
 

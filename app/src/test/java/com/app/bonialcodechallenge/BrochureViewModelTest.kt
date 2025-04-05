@@ -29,7 +29,7 @@ class BrochureViewModelTest {
     val instantTaskRule = InstantTaskExecutorRule()
 
     @get:Rule
-    val mainCoroutineRule = MainCoroutineRule() // New rule for coroutines
+    val mainCoroutineRule = MainCoroutineRule()
 
     private lateinit var viewModel: BrochureViewModel
     private lateinit var fakeRepository: FakeBrochureRepository
@@ -43,7 +43,6 @@ class BrochureViewModelTest {
 
     @Test
     fun `filters by distance correctly`() = runTest {
-        // Given
         val testContent = mapOf(
             "brochureImage" to "img1",
             "id" to "1",
@@ -55,14 +54,11 @@ class BrochureViewModelTest {
             ContentItem("standard", testContent + ("distance" to 6.0))
         )
 
-        // When
-        viewModel.toggleDistanceFilter() // Enable filter
+        viewModel.toggleDistanceFilter()
         viewModel.loadContents()
 
-        // Advance coroutines
         advanceUntilIdle()
 
-        // Then
         val state = viewModel.uiState.value
         assertTrue(state is UiState.Success)
         assertEquals(1, (state as UiState.Success).data.size)
@@ -71,7 +67,6 @@ class BrochureViewModelTest {
 
     @Test
     fun `shows loading and success states`() = runTest {
-        // Given
         val testContent = mapOf(
             "brochureImage" to "img1",
             "id" to "1",
@@ -80,15 +75,12 @@ class BrochureViewModelTest {
         )
         fakeRepository.addBrochures(ContentItem("standard", testContent))
 
-        // Collect states
         val states = mutableListOf<UiState<List<Brochure>>>()
         val job = viewModel.uiState.onEach { states.add(it) }.launchIn(this)
 
-        // When
         viewModel.loadContents()
-        advanceUntilIdle() // Important!
+        advanceUntilIdle()
 
-        // Then
         assertEquals(2, states.size)
         assertTrue(states[0] is UiState.Loading)
         assertTrue(states[1] is UiState.Success)

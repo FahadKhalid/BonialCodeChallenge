@@ -28,11 +28,11 @@ fun BrochureList(data: List<Brochure>) {
         data.forEach { brochure ->
             if (brochure.brochureType == BrochureType.Premium) {
                 item(key = brochure.id, span = { GridItemSpan(columns) }) {
-                    ContentItemView(brochure, isFullWidth = true)
+                    BrochureCard(brochure)
                 }
             } else {
                 item(key = brochure.id) {
-                    ContentItemView(brochure, isFullWidth = false)
+                    BrochureCard(brochure)
                 }
             }
         }

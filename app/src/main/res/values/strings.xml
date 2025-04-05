@@ -1,7 +1,14 @@
 <resources>
     <string name="app_name">BonialCodeChallenge</string>
-    <string name="filter_distance">Show only within 5 km</string>
-    <string name="filter_premium">Show Premium Brochures</string>
+    <string name="filter_premium">Premium Brochures</string>
     <string name="unknown_error">Please retry!</string>
+    <string name="no_internet">No internet connection</string>
+    <string name="internet_available">Internet connection available</string>
     <string name="retry">Retry</string>
+    <string name="filter_distance">Show nearby</string>
+    <string name="within_5km">Within 5 km radius</string>
+    <string name="premium_content">Exclusive brochures</string>
+    <string name="brochure_image">Brochure cover image</string>
+    <string name="premium">PREMIUM</string>
+    <string name="view">View</string>
 </resources>

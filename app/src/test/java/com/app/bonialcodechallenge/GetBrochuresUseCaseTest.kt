@@ -15,7 +15,6 @@ class GetBrochuresUseCaseTest {
 
     @Test
     fun `maps ContentItem to Brochure correctly`() = runTest {
-        // Given
         val testContent = mapOf(
             "brochureImage" to "image_url",
             "id" to "123",
@@ -27,10 +26,8 @@ class GetBrochuresUseCaseTest {
             ContentItem("standard", testContent)
         )
 
-        // When
         val result = useCase()
 
-        // Then
         assertTrue(result.isSuccess)
         val brochures = result.getOrNull()!!
         assertEquals(2, brochures.size)
@@ -41,14 +38,11 @@ class GetBrochuresUseCaseTest {
 
     @Test
     fun `handles repository errors`() = runTest {
-        // Given
         fakeRepository.shouldReturnError = true
         fakeRepository.errorToReturn = IOException("Network error")
 
-        // When
         val result = useCase()
 
-        // Then
         assertTrue(result.isFailure)
         assertEquals("Network error", result.exceptionOrNull()?.message)
     }

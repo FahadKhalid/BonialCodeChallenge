@@ -2,11 +2,13 @@ package com.app.bonialcodechallenge.presentation.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import com.app.bonialcodechallenge.presentation.viewmodel.BrochureViewModel
 import com.app.bonialcodechallenge.presentation.viewmodel.UiState
 import org.koin.androidx.compose.koinViewModel
@@ -22,17 +24,17 @@ fun BrochureScreen(viewModel: BrochureViewModel = koinViewModel()) {
     }
 
     Column(modifier = Modifier.fillMaxSize()) {
-        FilterSwitches(
+        FilterControls(
             filterByDistance = filterByDistance,
             filterByPremium = filterByBrochureType,
             onDistanceFilterChange = { viewModel.toggleDistanceFilter() },
-            onPremiumFilterChange = { viewModel.togglePremiumFilter() }
+            onPremiumFilterChange = { viewModel.togglePremiumFilter() },
+            modifier = Modifier.padding(top = 16.dp)
         )
 
         when (val state = uiState) {
             is UiState.Loading -> LoadingState()
             is UiState.Error -> ErrorState(
-                message = state.message,
                 onRetry = { viewModel.loadContents() }
             )
 

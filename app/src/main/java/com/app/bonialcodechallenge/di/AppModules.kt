@@ -15,7 +15,7 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-// ✅ Network Module
+// Network Module
 val networkModule = module {
     // Moshi for JSON Parsing
     single {
@@ -42,8 +42,8 @@ val networkModule = module {
     single {
         Retrofit.Builder()
             .baseUrl(getBaseUrl())
-            .client(get()) // Inject OkHttpClient
-            .addConverterFactory(MoshiConverterFactory.create(get())) // Inject Moshi
+            .client(get())
+            .addConverterFactory(MoshiConverterFactory.create(get()))
             .build()
     }
 
@@ -53,17 +53,17 @@ val networkModule = module {
     }
 }
 
-// ✅ Repository Module
+// Repository Module
 val repositoryModule = module {
-    single<BrochureRepository> { BrochureRepositoryImpl(get()) } // Inject ApiService
+    single<BrochureRepository> { BrochureRepositoryImpl(get()) }
 }
 
-// ✅ Use Case Module
+// Use Case Module
 val useCaseModule = module {
-    factory { GetBrochuresUseCase(get()) } // Inject Repository
+    factory { GetBrochuresUseCase(get()) }
 }
 
-// ✅ ViewModel Module
+// ViewModel Module
 val viewModelModule = module {
-    viewModel { BrochureViewModel(get()) } // Inject UseCase
+    viewModel { BrochureViewModel(get()) }
 }

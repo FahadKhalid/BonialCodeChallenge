@@ -19,14 +19,16 @@ class BrochureViewModel(private val getBrochuresUseCase: GetBrochuresUseCase) : 
     private val _filterByPremium = MutableStateFlow(false)
     val filterByPremium: StateFlow<Boolean> = _filterByPremium
 
+    // Reload data when switching filter
     fun toggleDistanceFilter() {
         _filterByDistance.value = !_filterByDistance.value
-        loadContents() // Reload data when switching filter
+        loadContents()
     }
 
+    // Reload data when switching filter
     fun togglePremiumFilter() {
         _filterByPremium.value = !_filterByPremium.value
-        loadContents() // Reload data when switching filter
+        loadContents()
     }
 
     fun loadContents() {
