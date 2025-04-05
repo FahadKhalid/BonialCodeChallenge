@@ -2,16 +2,15 @@
 
 A modern Android application for browsing retail brochures with filtering capabilities, built with Jetpack Compose.
 
-
 <table align="center">
   <tr>
     <td align="center">
-      <div><strong>Light Mode</strong></div>
-      <img src="https://github.com/user-attachments/assets/78feac8c-f92b-48c5-bf67-8b07cff07e0d" width="300" alt="Light Mode" />
+      <div><strong>Dark Mode</strong></div>
+      <img src="https://github.com/user-attachments/assets/2e4c2fd2-ee24-4142-8aeb-09252aad5800" width="300" alt="Light Mode" />
     </td>
     <td align="center">
-      <div><strong>Dark Mode</strong></div>
-      <img src="https://github.com/user-attachments/assets/f03f884b-affa-4074-9c2f-df76534c5ede" width="300" alt="Dark Mode" />
+      <div><strong>Light Mode</strong></div>
+      <img src="https://github.com/user-attachments/assets/a422adb8-fedb-4750-b68b-9048b67cf8fb" width="300" alt="Dark Mode" />
     </td>
   </tr>
 </table>
@@ -35,13 +34,13 @@ A modern Android application for browsing retail brochures with filtering capabi
 - **Networking**: Retrofit + Coil
 - **Async**: Coroutines + Flow
 - **Testing**: JUnit, Mockito
-  
-<div align="center">
+
+  <div align="center">
 
   <h3>📹 Watch the Demo Video</h3>
 
-  <a href="https://github.com/user-attachments/assets/b63d99f9-9b61-42b2-a36e-32b16db2c982" target="_blank">
-    <img src="https://img.shields.io/badge/Click%20to%20Watch-Video-blue?style=for-the-badge&logo=youtube" alt="Watch Video">
+  <a href="https://github.com/user-attachments/assets/722f27aa-4802-483b-bcfa-a92229984780" target="_blank">
+    <img src="https://img.shields.io/badge/Click%20to%20Watch-Video-blue?style=for-the-badge&logo=github" alt="Watch Video">
   </a>
 
 </div>
