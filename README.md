@@ -2,8 +2,6 @@
 
 A modern Android application for browsing retail brochures with filtering capabilities, built with Jetpack Compose.
 
-![](/Users/fahad/Desktop/BonialCode.mp4)
-
 ## Features ✨
 
 - 🏪 Browse retail brochures in a beautiful grid layout
@@ -24,5 +22,7 @@ A modern Android application for browsing retail brochures with filtering capabi
 - **Async**: Coroutines + Flow
 - **Testing**: JUnit, Mockito
 
-![](/Users/fahad/Desktop/LightMode.png)
-![](/Users/fahad/Desktop/DarkMode.png)
+
+[BonialCode.mp4](../../Desktop/BonialCode.mp4)
+![DarkMode.png](../../Desktop/DarkMode.png)
+![LightMode.png](../../Desktop/LightMode.png)
