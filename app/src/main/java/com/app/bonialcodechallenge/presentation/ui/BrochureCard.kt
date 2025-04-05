@@ -56,7 +56,7 @@ fun BrochureCard(
                         .error(R.drawable.placeholder_image)
                         .build(),
                     contentDescription = stringResource(R.string.brochure_image),
-                    contentScale = ContentScale.Fit,
+                    contentScale = ContentScale.Crop, // I changed it to Fit to Crop, to make the UI better.
                     modifier = Modifier.fillMaxSize()
                 )
             }
